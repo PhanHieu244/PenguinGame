@@ -1135,4 +1135,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee4c4ca6cfa61144afedeeae597be3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _screenType: 14
+  _screenType: 2
