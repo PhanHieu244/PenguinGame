@@ -1,12 +1,13 @@
 using System;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
+using UnityEngine.EventSystems;
 
 namespace Movement
 {
     using UnityEngine;
 
-    public class SwipeScript : SerializedMonoBehaviour
+    public class SwipeScript : SerializedMonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
     {
         [SerializeField] private Direction direction = Direction.VERTICAL;
         [SerializeField] private float speed = 2f;
@@ -26,87 +27,74 @@ namespace Movement
             mainCam = Camera.main;
         }
 
-        // Update is called once per frame
-        void Update()
+        public void OnBeginDrag(PointerEventData eventData)
         {
-            deltaSpeed = speed * Time.deltaTime;
-            if (Input.touchCount == 1)
+            var touchPos = (Vector2) mainCam.ScreenToWorldPoint(Input.mousePosition);
+            recentTouchPos = touchPos;
+            isSwipe = true;
+        }
+
+        public void OnEndDrag(PointerEventData eventData)
+        {
+            isSwipe = false;
+        }
+
+        public void OnDrag(PointerEventData eventData)
+        {
+            if (!isSwipe) return;
+            deltaSpeed = Time.deltaTime * speed;
+            var touchPos = (Vector2) mainCam.ScreenToWorldPoint(Input.mousePosition);
+            Vector2 swipeType = Vector2.zero;
+                
+            swipeType = (touchPos - recentTouchPos) * deltaSpeed;
+            recentTouchPos = touchPos;
+
+            if ((direction & Direction.HORIZONTAL) == 0) swipeType.x = 0.0f;
+            if ((direction & Direction.VERTICAL) == 0) swipeType.y = 0.0f;
+            if (isChangePos)
             {
-                var touch = Input.touches[0];
-                var touchPos = (Vector2) mainCam.ScreenToWorldPoint(touch.position);
-                switch (touch.phase)
-                    {
-                        case TouchPhase.Began:
-                            /* this is a new touch */
-                            recentTouchPos = touchPos;
-                            isSwipe = true;
-                            break;
+                var newPos = movement.Transform.position;
+                newPos += (Vector3) swipeType;
+                    
+                if (isLimitHorizontal)
+                {
+                    newPos.x = Mathf.Clamp(newPos.x, minX, maxX);
+                }
 
-                        case TouchPhase.Canceled:
-                            /* The touch is being canceled */
-                            isSwipe = false;
-                            break;
+                if (isLimitVertical)
+                {
+                    newPos.y = Mathf.Clamp(newPos.y, minY, maxY);
+                }
 
-                        case TouchPhase.Moved:
+                movement.Transform.position = newPos;
+            }
+            if (swipeType.x != 0.0f)
+            {
+                if (swipeType.x > 0.0f)
+                {
+                        
+                    //MOVE RIGHT
+                    movement.MoveRight(swipeType.x);
+                }
+                else
+                {
+                    // MOVE LEFT
+                    movement.MoveLeft(swipeType.x);
+                }
+            }
 
-                            if (isSwipe)
-                            {
-                                Vector2 swipeType = Vector2.zero;
-                                
-                                swipeType = (touchPos - recentTouchPos) * deltaSpeed;
-                                recentTouchPos = touchPos;
-
-                                if ((direction & Direction.HORIZONTAL) == 0) swipeType.x = 0.0f;
-                                if ((direction & Direction.VERTICAL) == 0) swipeType.y = 0.0f;
-                                if (isChangePos)
-                                {
-                                    var newPos = movement.Transform.position;
-                                    newPos += (Vector3) swipeType;
-                                    
-                                    if (isLimitHorizontal)
-                                    {
-                                        newPos.x = Mathf.Clamp(newPos.x, minX, maxX);
-                                    }
-
-                                    if (isLimitVertical)
-                                    {
-                                        newPos.y = Mathf.Clamp(newPos.y, minY, maxY);
-                                    }
-
-                                    movement.Transform.position = newPos;
-                                }
-                                if (swipeType.x != 0.0f)
-                                {
-                                    if (swipeType.x > 0.0f)
-                                    {
-                                        
-                                        //MOVE RIGHT
-                                        movement.MoveRight(swipeType.x);
-                                    }
-                                    else
-                                    {
-                                        // MOVE LEFT
-                                        movement.MoveLeft(swipeType.x);
-                                    }
-                                }
-
-                                if (swipeType.y != 0.0f)
-                                {
-                                    if (swipeType.y > 0.0f)
-                                    {
-                                        // MOVE UP
-                                        movement.MoveUp(swipeType.y);
-                                    }
-                                    else
-                                    {
-                                        // MOVE DOWN
-                                        movement.MoveDown(swipeType.y);
-                                    }
-                                }
-                            }
-
-                            break;
-                    }
+            if (swipeType.y != 0.0f)
+            {
+                if (swipeType.y > 0.0f)
+                {
+                    // MOVE UP
+                    movement.MoveUp(swipeType.y);
+                }
+                else
+                {
+                    // MOVE DOWN
+                    movement.MoveDown(swipeType.y);
+                }
             }
         }
     }

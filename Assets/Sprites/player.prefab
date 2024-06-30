@@ -73,7 +73,6 @@ GameObject:
   - component: {fileID: 1320952778531494744}
   - component: {fileID: 6690731649054174095}
   - component: {fileID: 7533140329850811621}
-  - component: {fileID: 3836608130013876735}
   - component: {fileID: 6801846694762924252}
   - component: {fileID: 7771180083208821918}
   - component: {fileID: 9137589292704718467}
@@ -177,40 +176,6 @@ MonoBehaviour:
     PrefabModifications: []
     SerializationNodes: []
   renderer: {fileID: 6690731649054174095}
---- !u!114 &3836608130013876735
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7094003150509807061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf0e024051054cb4dbb815e8de3b1d71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects:
-    - {fileID: 7533140329850811621}
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes:
-    - Name: movement
-      Entry: 10
-      Data: 0
-  direction: 2
-  speed: 40
-  isChangePos: 1
-  isLimitHorizontal: 0
-  isLimitVertical: 0
-  minX: 0
-  maxX: 0
-  minY: 0
-  maxY: 0
 --- !u!114 &6801846694762924252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -334,9 +299,9 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.37920085, y: 0.41196632}
-  m_Direction: 0
+  m_Offset: {x: 0.028530914, y: -0.120216876}
+  m_Size: {x: 0.3221395, y: 0.25006148}
+  m_Direction: 1
 --- !u!50 &8635530363012756832
 Rigidbody2D:
   serializedVersion: 4
