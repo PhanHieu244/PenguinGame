@@ -805,6 +805,10 @@ PrefabInstance:
       value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 2612855066734458547, guid: 7f7d688cbe8281e44b0b4648e07db12c, type: 3}
+      propertyPath: isLimitHorizontal
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2612855066734458547, guid: 7f7d688cbe8281e44b0b4648e07db12c, type: 3}
       propertyPath: serializationData.Prefab
       value: 
       objectReference: {fileID: 0}
@@ -1313,6 +1317,10 @@ PrefabInstance:
     - target: {fileID: 1320952778531494744, guid: c475efa4c17fd3949b7cc75198be4aec, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6690731649054174095, guid: c475efa4c17fd3949b7cc75198be4aec, type: 3}
+      propertyPath: m_SortingOrder
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 7094003150509807061, guid: c475efa4c17fd3949b7cc75198be4aec, type: 3}
       propertyPath: m_Name
