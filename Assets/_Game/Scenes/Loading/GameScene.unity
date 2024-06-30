@@ -201,8 +201,8 @@ Transform:
   m_GameObject: {fileID: 70746808}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.31, y: 0.69, z: 0}
-  m_LocalScale: {x: 1.789, y: 1.789, z: 1.789}
+  m_LocalPosition: {x: 0, y: 0.69, z: 0}
+  m_LocalScale: {x: 1.5106316, y: 1.789, z: 1.789}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -260,7 +260,7 @@ MonoBehaviour:
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1080, y: 1920}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -621,8 +621,8 @@ Camera:
   m_GameObject: {fileID: 615795565}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.30588236, g: 0.68235296, b: 0.6784314, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -720,7 +720,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8068837163610797119, guid: ed6ce976afc56df4b9168cae275c4296, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -2099.9028
       objectReference: {fileID: 0}
     - target: {fileID: 8068837163610797119, guid: ed6ce976afc56df4b9168cae275c4296, type: 3}
       propertyPath: m_SizeDelta.y
@@ -780,7 +780,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8068837164011591800, guid: ed6ce976afc56df4b9168cae275c4296, type: 3}
       insertIndex: -1
       addedObject: {fileID: 957966212}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8068837163610797114, guid: ed6ce976afc56df4b9168cae275c4296, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 808588614}
   m_SourcePrefab: {fileID: 100100000, guid: ed6ce976afc56df4b9168cae275c4296, type: 3}
 --- !u!224 &808588611 stripped
 RectTransform:
@@ -792,6 +795,25 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8068837164011591800, guid: ed6ce976afc56df4b9168cae275c4296, type: 3}
   m_PrefabInstance: {fileID: 808588610}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &808588613 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8068837163610797114, guid: ed6ce976afc56df4b9168cae275c4296, type: 3}
+  m_PrefabInstance: {fileID: 808588610}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &808588614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808588613}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1001 &957966211
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1174,7 +1196,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 573255311888981928, guid: b36d6aa8ccfcd8e4b9435e23200d2efe, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: -2024.2
       objectReference: {fileID: 0}
     - target: {fileID: 573255311888981928, guid: b36d6aa8ccfcd8e4b9435e23200d2efe, type: 3}
       propertyPath: m_SizeDelta.y

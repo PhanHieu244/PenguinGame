@@ -84,7 +84,7 @@ MonoBehaviour:
       Data: 0.99$
     - Name: value
       Entry: 3
-      Data: 0
+      Data: 1
     - Name: 
       Entry: 8
       Data: 
@@ -96,10 +96,10 @@ MonoBehaviour:
       Data: mua_vang_goi_2
     - Name: price
       Entry: 1
-      Data: 1.99$
+      Data: 2.99$
     - Name: value
       Entry: 3
-      Data: 0
+      Data: 3
     - Name: 
       Entry: 8
       Data: 
@@ -114,7 +114,7 @@ MonoBehaviour:
       Data: 4.99$
     - Name: value
       Entry: 3
-      Data: 0
+      Data: 5
     - Name: 
       Entry: 8
       Data: 
@@ -129,7 +129,7 @@ MonoBehaviour:
       Data: 9.99$
     - Name: value
       Entry: 3
-      Data: 0
+      Data: 10
     - Name: 
       Entry: 8
       Data: 
